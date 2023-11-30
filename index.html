@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0f172a",
+              secondary: "#0db9e9",
+              tertiary: "#1e293b",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-primary text-white">
+
+    <header
+    class=" flex "
+  >
+    <nav
+      class="flex w-full items-center justify-between bg-primary text-white p-3"
+      
+    >
+      <div
+        class="flex-1 bg-primary flex justify-center mx-5 bg-tertiary rounded-md"
+      ></div>
+      <div class="justify-between gap-10 items-center hidden lg:flex">
+        <div>v0.0.0</div>
+        <div>Icon</div>
+        <div><a href="https://github.com">Github</a></div>
+        <div>
+          <button class="bg-secondary px-4 py-2 rounded-md text-[#212934]">
+            Submit a request
+          </button>
+        </div>
+        <div>
+          <button
+            class="border-secondary border border-outline px-4 py-2 rounded-md text-secondary"
+          >
+            Sign in
+          </button>
+        </div>
+      </div>
+
+      
+      </div>
+    </nav>
+  </header>
+
+
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "Fintr Developer Portal",
+        coverpage: true,
+        repo: 'https://github.com/docsifyjs/docsify/',
+        search: "auto",
+        topMargin: 90,
+        autoHeader:true,
+        auto2top:true,
+        loadSidebar: true,
+        routerMode: 'history',
+        search: ["/"],
+        search: {
+          noData: {
+            "/": "No results!",
+          },
+          paths: "auto",
+          placeholder: {
+            "/": "Search",
+          },
+        },
+
+        plugins: [
+          function (hook) {
+            const footer = [
+              '<footer style="text-align: center;margin-top: 50px;">',
+              "<span> Fintr  &copy; 2023 </span>",
+              "</footer>",
+            ].join("");
+
+            hook.afterEach(function (html) {
+              return html + footer;
+            });
+          },
+        ],
+      };
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  </body>
+</html>
